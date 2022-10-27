@@ -1,0 +1,12 @@
+C:\Users\mdavidovic\Desktop\.NET\pd-workademy-todos\src\Infrastructure\PD.Workademy.Todo.Infrastructure\bin\Debug\net6.0\PD.Workademy.Todo.Infrastructure.deps.json
+C:\Users\mdavidovic\Desktop\.NET\pd-workademy-todos\src\Infrastructure\PD.Workademy.Todo.Infrastructure\bin\Debug\net6.0\PD.Workademy.Todo.Infrastructure.dll
+C:\Users\mdavidovic\Desktop\.NET\pd-workademy-todos\src\Infrastructure\PD.Workademy.Todo.Infrastructure\bin\Debug\net6.0\PD.Workademy.Todo.Infrastructure.pdb
+C:\Users\mdavidovic\Desktop\.NET\pd-workademy-todos\src\Infrastructure\PD.Workademy.Todo.Infrastructure\obj\Debug\net6.0\PD.Workademy.Todo.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\mdavidovic\Desktop\.NET\pd-workademy-todos\src\Infrastructure\PD.Workademy.Todo.Infrastructure\obj\Debug\net6.0\PD.Workademy.Todo.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mdavidovic\Desktop\.NET\pd-workademy-todos\src\Infrastructure\PD.Workademy.Todo.Infrastructure\obj\Debug\net6.0\PD.Workademy.Todo.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\mdavidovic\Desktop\.NET\pd-workademy-todos\src\Infrastructure\PD.Workademy.Todo.Infrastructure\obj\Debug\net6.0\PD.Workademy.Todo.Infrastructure.AssemblyInfo.cs
+C:\Users\mdavidovic\Desktop\.NET\pd-workademy-todos\src\Infrastructure\PD.Workademy.Todo.Infrastructure\obj\Debug\net6.0\PD.Workademy.Todo.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\mdavidovic\Desktop\.NET\pd-workademy-todos\src\Infrastructure\PD.Workademy.Todo.Infrastructure\obj\Debug\net6.0\PD.Workademy.Todo.Infrastructure.dll
+C:\Users\mdavidovic\Desktop\.NET\pd-workademy-todos\src\Infrastructure\PD.Workademy.Todo.Infrastructure\obj\Debug\net6.0\refint\PD.Workademy.Todo.Infrastructure.dll
+C:\Users\mdavidovic\Desktop\.NET\pd-workademy-todos\src\Infrastructure\PD.Workademy.Todo.Infrastructure\obj\Debug\net6.0\PD.Workademy.Todo.Infrastructure.pdb
+C:\Users\mdavidovic\Desktop\.NET\pd-workademy-todos\src\Infrastructure\PD.Workademy.Todo.Infrastructure\obj\Debug\net6.0\ref\PD.Workademy.Todo.Infrastructure.dll

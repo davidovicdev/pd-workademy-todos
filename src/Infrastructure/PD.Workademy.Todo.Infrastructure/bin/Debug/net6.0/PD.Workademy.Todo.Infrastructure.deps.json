@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "PD.Workademy.Todo.Infrastructure/1.0.0": {
+        "runtime": {
+          "PD.Workademy.Todo.Infrastructure.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PD.Workademy.Todo.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

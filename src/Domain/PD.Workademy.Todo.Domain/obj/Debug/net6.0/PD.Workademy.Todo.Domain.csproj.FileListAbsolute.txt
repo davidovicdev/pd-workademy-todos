@@ -1,0 +1,12 @@
+C:\Users\mdavidovic\Desktop\.NET\pd-workademy-todos\src\Domain\PD.Workademy.Todo.Domain\bin\Debug\net6.0\PD.Workademy.Todo.Domain.deps.json
+C:\Users\mdavidovic\Desktop\.NET\pd-workademy-todos\src\Domain\PD.Workademy.Todo.Domain\bin\Debug\net6.0\PD.Workademy.Todo.Domain.dll
+C:\Users\mdavidovic\Desktop\.NET\pd-workademy-todos\src\Domain\PD.Workademy.Todo.Domain\bin\Debug\net6.0\PD.Workademy.Todo.Domain.pdb
+C:\Users\mdavidovic\Desktop\.NET\pd-workademy-todos\src\Domain\PD.Workademy.Todo.Domain\obj\Debug\net6.0\PD.Workademy.Todo.Domain.csproj.AssemblyReference.cache
+C:\Users\mdavidovic\Desktop\.NET\pd-workademy-todos\src\Domain\PD.Workademy.Todo.Domain\obj\Debug\net6.0\PD.Workademy.Todo.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mdavidovic\Desktop\.NET\pd-workademy-todos\src\Domain\PD.Workademy.Todo.Domain\obj\Debug\net6.0\PD.Workademy.Todo.Domain.AssemblyInfoInputs.cache
+C:\Users\mdavidovic\Desktop\.NET\pd-workademy-todos\src\Domain\PD.Workademy.Todo.Domain\obj\Debug\net6.0\PD.Workademy.Todo.Domain.AssemblyInfo.cs
+C:\Users\mdavidovic\Desktop\.NET\pd-workademy-todos\src\Domain\PD.Workademy.Todo.Domain\obj\Debug\net6.0\PD.Workademy.Todo.Domain.csproj.CoreCompileInputs.cache
+C:\Users\mdavidovic\Desktop\.NET\pd-workademy-todos\src\Domain\PD.Workademy.Todo.Domain\obj\Debug\net6.0\PD.Workademy.Todo.Domain.dll
+C:\Users\mdavidovic\Desktop\.NET\pd-workademy-todos\src\Domain\PD.Workademy.Todo.Domain\obj\Debug\net6.0\refint\PD.Workademy.Todo.Domain.dll
+C:\Users\mdavidovic\Desktop\.NET\pd-workademy-todos\src\Domain\PD.Workademy.Todo.Domain\obj\Debug\net6.0\PD.Workademy.Todo.Domain.pdb
+C:\Users\mdavidovic\Desktop\.NET\pd-workademy-todos\src\Domain\PD.Workademy.Todo.Domain\obj\Debug\net6.0\ref\PD.Workademy.Todo.Domain.dll
