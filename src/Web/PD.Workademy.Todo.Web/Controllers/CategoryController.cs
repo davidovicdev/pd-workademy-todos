@@ -3,17 +3,16 @@ using PD.Workademy.Todo.Web.ApiModels;
 
 namespace PD.Workademy.Todo.Web.Controllers
 {
-    [ApiController]
     public class CategoryController : ApiBaseController
     {
-        [HttpGet("/get/{id}")]
+        [HttpGet]
         public async Task<ActionResult> GetCategoryAsync(Guid guid)
         {
             CategoryDTO category = new(guid, "Easy");
             return Ok(category);
         }
 
-        [HttpGet("/getAll")]
+        [HttpGet("/Categories")]
         public async Task<ActionResult> GetCategoriesAsync()
         {
             List<CategoryDTO> categories =
@@ -26,7 +25,7 @@ namespace PD.Workademy.Todo.Web.Controllers
             return Ok(categories);
         }
 
-        [HttpPost("/add")]
+        [HttpPost]
         public async Task<ActionResult> AddCategoryAsync([FromBody] CategoryDTO newCategory)
         {
             List<CategoryDTO> existingCategories =
@@ -40,7 +39,7 @@ namespace PD.Workademy.Todo.Web.Controllers
             return Ok(existingCategories);
         }
 
-        [HttpPut("/update/{id}")]
+        [HttpPut]
         public async Task<ActionResult> UpdateCategoryAsync(Guid guid, CategoryDTO updatedCategory)
         {
             List<CategoryDTO> existingCategories =
@@ -56,7 +55,7 @@ namespace PD.Workademy.Todo.Web.Controllers
             return Ok(categoryToUpdate);
         }
 
-        [HttpDelete("/delete/{id}")]
+        [HttpDelete]
         public async Task<ActionResult> DeleteCategoryAsync(Guid guid)
         {
             List<CategoryDTO> existingCategories =
