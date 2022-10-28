@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mdavidovic\\Desktop\\.NET\\pd-workademy-todos\\src\\Domain\\PD.Workademy.Todo.Domain\\PD.Workademy.Todo.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\mdavidovic\\Desktop\\.NET\\pd-workademy-todos\\pd-workademy-todos\\src\\Domain\\PD.Workademy.Todo.Domain\\PD.Workademy.Todo.Domain.csproj",
       "projectName": "PD.Workademy.Todo.Domain",
-      "projectPath": "C:\\Users\\mdavidovic\\Desktop\\.NET\\pd-workademy-todos\\src\\Domain\\PD.Workademy.Todo.Domain\\PD.Workademy.Todo.Domain.csproj",
+      "projectPath": "C:\\Users\\mdavidovic\\Desktop\\.NET\\pd-workademy-todos\\pd-workademy-todos\\src\\Domain\\PD.Workademy.Todo.Domain\\PD.Workademy.Todo.Domain.csproj",
       "packagesPath": "C:\\Users\\mdavidovic\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mdavidovic\\Desktop\\.NET\\pd-workademy-todos\\src\\Domain\\PD.Workademy.Todo.Domain\\obj\\",
+      "outputPath": "C:\\Users\\mdavidovic\\Desktop\\.NET\\pd-workademy-todos\\pd-workademy-todos\\src\\Domain\\PD.Workademy.Todo.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
