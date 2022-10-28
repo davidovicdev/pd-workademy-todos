@@ -1,10 +1,9 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using PD.Workademy.Todo.Web.ApiModels;
 
 namespace PD.Workademy.Todo.Web.Controllers
 {
+    [Route("[controller]")]
     [ApiController]
-    public class ApiBaseController : ControllerBase
-    {
-    }
+    public class ApiBaseController : ControllerBase { }
 }

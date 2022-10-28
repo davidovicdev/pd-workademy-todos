@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PcsbeR7Vis0sZ+K6fi2BfFV63Kz+ooYPd5y8kZy7iJNoECYQECN42H+95lCXryegsB8Uxo+89rarnX+DUt/LVg==",
+  "dgSpecHash": "diaSeJ8zFwCdgEHfj4B93gDaKmyMN6gWzOSWZjH7f9zDwZQ8yDik6Nddp5yVDPHOoPCDLa18nOAF55PDhOY31g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mdavidovic\\Desktop\\.NET\\pd-workademy-todos\\pd-workademy-todos\\src\\Domain\\PD.Workademy.Todo.Domain\\PD.Workademy.Todo.Domain.csproj",
+  "projectFilePath": "C:\\Users\\mdavidovic\\Desktop\\.NET\\pd-workademy-todos\\src\\Domain\\PD.Workademy.Todo.Domain\\PD.Workademy.Todo.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
