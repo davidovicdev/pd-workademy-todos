@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PD.Workademy.Todo.Domain.SharedKernel.Interfaces
+namespace PD.Workademy.Todo.Domain.SharedKernel
 {
     public abstract class BaseEntity
     {

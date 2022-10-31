@@ -1,4 +1,4 @@
-﻿using PD.Workademy.Todo.Domain.SharedKernel.Interfaces;
+﻿using PD.Workademy.Todo.Domain.SharedKernel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
