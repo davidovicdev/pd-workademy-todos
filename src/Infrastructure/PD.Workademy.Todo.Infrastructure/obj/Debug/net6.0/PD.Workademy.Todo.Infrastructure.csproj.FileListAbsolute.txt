@@ -10,3 +10,8 @@ C:\Users\mdavidovic\Desktop\.NET\pd-workademy-todos\src\Infrastructure\PD.Workad
 C:\Users\mdavidovic\Desktop\.NET\pd-workademy-todos\src\Infrastructure\PD.Workademy.Todo.Infrastructure\obj\Debug\net6.0\refint\PD.Workademy.Todo.Infrastructure.dll
 C:\Users\mdavidovic\Desktop\.NET\pd-workademy-todos\src\Infrastructure\PD.Workademy.Todo.Infrastructure\obj\Debug\net6.0\PD.Workademy.Todo.Infrastructure.pdb
 C:\Users\mdavidovic\Desktop\.NET\pd-workademy-todos\src\Infrastructure\PD.Workademy.Todo.Infrastructure\obj\Debug\net6.0\ref\PD.Workademy.Todo.Infrastructure.dll
+C:\Users\mdavidovic\Desktop\.NET\pd-workademy-todos\src\Infrastructure\PD.Workademy.Todo.Infrastructure\bin\Debug\net6.0\PD.Workademy.Todo.Infrastructure.runtimeconfig.json
+C:\Users\mdavidovic\Desktop\.NET\pd-workademy-todos\src\Infrastructure\PD.Workademy.Todo.Infrastructure\bin\Debug\net6.0\PD.Workademy.Todo.Domain.dll
+C:\Users\mdavidovic\Desktop\.NET\pd-workademy-todos\src\Infrastructure\PD.Workademy.Todo.Infrastructure\bin\Debug\net6.0\PD.Workademy.Todo.Domain.pdb
+C:\Users\mdavidovic\Desktop\.NET\pd-workademy-todos\src\Infrastructure\PD.Workademy.Todo.Infrastructure\obj\Debug\net6.0\PD.Workademy.Todo.Infrastructure.csproj.CopyComplete
+C:\Users\mdavidovic\Desktop\.NET\pd-workademy-todos\src\Infrastructure\PD.Workademy.Todo.Infrastructure\obj\Debug\net6.0\PD.Workademy.Todo.Infrastructure.genruntimeconfig.cache

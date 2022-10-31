@@ -1,10 +1,6 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\src\\Domain\\PD.Workademy.Todo.Domain",
-    "\\src\\Web",
-    "\\src\\Web\\PD.Workademy.Todo.Web",
-    "\\src\\Web\\PD.Workademy.Todo.Web\\Controllers"
+    ""
   ],
   "SelectedNode": "\\pd-workademy-todos.sln",
   "PreviewInSolutionExplorer": false

@@ -25,3 +25,7 @@ C:\Users\mdavidovic\Desktop\.NET\pd-workademy-todos\src\Web\PD.Workademy.Todo.We
 C:\Users\mdavidovic\Desktop\.NET\pd-workademy-todos\src\Web\PD.Workademy.Todo.Web\obj\Debug\net6.0\PD.Workademy.Todo.Web.pdb
 C:\Users\mdavidovic\Desktop\.NET\pd-workademy-todos\src\Web\PD.Workademy.Todo.Web\obj\Debug\net6.0\PD.Workademy.Todo.Web.genruntimeconfig.cache
 C:\Users\mdavidovic\Desktop\.NET\pd-workademy-todos\src\Web\PD.Workademy.Todo.Web\obj\Debug\net6.0\ref\PD.Workademy.Todo.Web.dll
+C:\Users\mdavidovic\Desktop\.NET\pd-workademy-todos\src\Web\PD.Workademy.Todo.Web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\mdavidovic\Desktop\.NET\pd-workademy-todos\src\Web\PD.Workademy.Todo.Web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\mdavidovic\Desktop\.NET\pd-workademy-todos\src\Web\PD.Workademy.Todo.Web\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\mdavidovic\Desktop\.NET\pd-workademy-todos\src\Web\PD.Workademy.Todo.Web\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
