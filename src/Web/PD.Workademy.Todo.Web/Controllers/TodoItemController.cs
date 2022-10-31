@@ -8,7 +8,7 @@ namespace PD.Workademy.Todo.Web.Controllers
         [HttpGet]
         public async Task<ActionResult> GetTodoItemAsync(Guid guid)
         {
-            TodoItemDTO category =
+            TodoItemDTO todoItem =
                 new(
                     guid,
                     "Learn .NET",
@@ -21,7 +21,7 @@ namespace PD.Workademy.Todo.Web.Controllers
                         "Davidovic"
                     )
                 );
-            return Ok(category);
+            return Ok(todoItem);
         }
 
         [HttpPost]
