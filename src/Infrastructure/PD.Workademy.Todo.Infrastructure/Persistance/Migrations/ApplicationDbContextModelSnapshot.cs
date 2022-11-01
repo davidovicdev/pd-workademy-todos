@@ -34,7 +34,7 @@ namespace PD.Workademy.Todo.Infrastructure.Persistance.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories", (string)null);
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("PD.Workademy.Todo.Domain.Entities.TodoItem", b =>
@@ -65,7 +65,7 @@ namespace PD.Workademy.Todo.Infrastructure.Persistance.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Todoitems", (string)null);
+                    b.ToTable("Todoitems");
                 });
 
             modelBuilder.Entity("PD.Workademy.Todo.Domain.Entities.User", b =>
@@ -80,12 +80,13 @@ namespace PD.Workademy.Todo.Infrastructure.Persistance.Migrations
                         .HasColumnType("nvarchar(25)");
 
                     b.Property<string>("LastName")
+                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users", (string)null);
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("PD.Workademy.Todo.Domain.Entities.TodoItem", b =>

@@ -11,5 +11,10 @@ namespace PD.Workademy.Todo.Domain.Entities
     {
         public string Name { get; set; }
         public ICollection<TodoItem> TodoItems { get; set; }
+        public Category(Guid id, string name) 
+        {
+            Id = id;
+            Name = name;
+        }
     }
 }

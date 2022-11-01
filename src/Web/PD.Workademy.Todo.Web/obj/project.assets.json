@@ -333,6 +333,29 @@
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
         }
+      },
+      "PD.Workademy.Todo.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "PD.Workademy.Todo.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PD.Workademy.Todo.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PD.Workademy.Todo.Application.dll": {}
+        }
+      },
+      "PD.Workademy.Todo.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/PD.Workademy.Todo.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PD.Workademy.Todo.Domain.dll": {}
+        }
       }
     }
   },
@@ -784,11 +807,22 @@
         "system.runtime.compilerservices.unsafe.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "PD.Workademy.Todo.Application/1.0.0": {
+      "type": "project",
+      "path": "../../Application/PD.Workademy.Todo.Application/PD.Workademy.Todo.Application.csproj",
+      "msbuildProject": "../../Application/PD.Workademy.Todo.Application/PD.Workademy.Todo.Application.csproj"
+    },
+    "PD.Workademy.Todo.Domain/1.0.0": {
+      "type": "project",
+      "path": "../../Domain/PD.Workademy.Todo.Domain/PD.Workademy.Todo.Domain.csproj",
+      "msbuildProject": "../../Domain/PD.Workademy.Todo.Domain/PD.Workademy.Todo.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "Microsoft.EntityFrameworkCore >= 6.0.10",
+      "PD.Workademy.Todo.Application >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
   },
@@ -824,7 +858,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\mdavidovic\\Desktop\\.NET\\pd-workademy-todos\\src\\Application\\PD.Workademy.Todo.Application\\PD.Workademy.Todo.Application.csproj": {
+              "projectPath": "C:\\Users\\mdavidovic\\Desktop\\.NET\\pd-workademy-todos\\src\\Application\\PD.Workademy.Todo.Application\\PD.Workademy.Todo.Application.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

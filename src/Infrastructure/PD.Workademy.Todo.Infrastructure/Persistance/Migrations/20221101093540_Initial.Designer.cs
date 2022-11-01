@@ -12,8 +12,8 @@ using PD.Workademy.Todo.Infrastructure.Persistance;
 namespace PD.Workademy.Todo.Infrastructure.Persistance.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221031105002_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20221101093540_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -82,6 +82,7 @@ namespace PD.Workademy.Todo.Infrastructure.Persistance.Migrations
                         .HasColumnType("nvarchar(25)");
 
                     b.Property<string>("LastName")
+                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 

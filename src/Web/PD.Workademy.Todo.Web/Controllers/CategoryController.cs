@@ -1,10 +1,16 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PD.Workademy.Todo.Application.Services;
 using PD.Workademy.Todo.Web.ApiModels;
 
 namespace PD.Workademy.Todo.Web.Controllers
 {
     public class CategoryController : ApiBaseController
     {
+        private readonly ICategoryService _categoryService ;
+        public CategoryController(ICategoryService categoryService)
+        {
+            _categoryService = categoryService;
+        }
         [HttpGet]
         public async Task<ActionResult> GetCategoryAsync(Guid guid)
         {
@@ -15,13 +21,7 @@ namespace PD.Workademy.Todo.Web.Controllers
         [HttpGet("/Categories")]
         public async Task<ActionResult> GetCategoriesAsync()
         {
-            List<CategoryDTO> categories =
-                new()
-                {
-                    new CategoryDTO(new Guid("4e25d511-2d2f-4a03-bda6-210b5facf14b"), "Easy"),
-                    new CategoryDTO(new Guid("83a933d4-d2ca-47df-9250-b3dbbab1d80a"), "Medium"),
-                    new CategoryDTO(new Guid("da1b99b4-a559-4c74-8844-ada3bdee7e48"), "Hard"),
-                };
+            var categories = _categoryService.GetCategories().Select(x=>new CategoryDTO(x.Id,x.Name));
             return Ok(categories);
         }
 
