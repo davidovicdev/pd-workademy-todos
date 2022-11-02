@@ -1,9 +1,14 @@
 ﻿using PD.Workademy.Todo.Domain.Entities;
+using PD.Workademy.Todo.Web.ApiModels;
 
 namespace PD.Workademy.Todo.Application.Services
 {
     public interface ICategoryService
     {
-        List<Category> GetCategories();
+        IEnumerable<CategoryDTO> GetCategories();
+        CategoryDTO GetCategory(Guid guid);
+        CategoryDTO UpdateCategory(Guid guid, CategoryDTO category);
+        CategoryDTO DeleteCategory(Guid guid);
+        CategoryDTO AddCategory(CategoryDTO category);
     }
 }

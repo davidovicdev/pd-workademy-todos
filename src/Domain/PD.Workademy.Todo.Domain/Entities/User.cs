@@ -12,7 +12,6 @@ namespace PD.Workademy.Todo.Domain.Entities
     {
         [MaxLength(25)]
         public string FirstName { get; set; }
-
         [MaxLength(50)]
         public string LastName { get; set; }
         public ICollection<TodoItem> TodoItems { get; set; }

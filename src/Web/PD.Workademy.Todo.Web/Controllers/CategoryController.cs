@@ -1,73 +1,47 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PD.Workademy.Todo.Application.Services;
+using PD.Workademy.Todo.Domain.Entities;
 using PD.Workademy.Todo.Web.ApiModels;
 
 namespace PD.Workademy.Todo.Web.Controllers
 {
     public class CategoryController : ApiBaseController
     {
-        private readonly ICategoryService _categoryService ;
+        private readonly ICategoryService _categoryService;
+
         public CategoryController(ICategoryService categoryService)
         {
             _categoryService = categoryService;
         }
+
         [HttpGet]
         public async Task<ActionResult> GetCategoryAsync(Guid guid)
         {
-            CategoryDTO category = new(guid, "Easy");
-            return Ok(category);
+            return Ok(_categoryService.GetCategory(guid));
         }
 
         [HttpGet("/Categories")]
         public async Task<ActionResult> GetCategoriesAsync()
         {
-            var categories = _categoryService.GetCategories().Select(x=>new CategoryDTO(x.Id,x.Name));
-            return Ok(categories);
+            return Ok(_categoryService.GetCategories());
         }
 
         [HttpPost]
         public async Task<ActionResult> AddCategoryAsync([FromBody] CategoryDTO newCategory)
         {
-            List<CategoryDTO> existingCategories =
-                new()
-                {
-                    new CategoryDTO(new Guid("4e25d511-2d2f-4a03-bda6-210b5facf14b"), "Easy"),
-                    new CategoryDTO(new Guid("83a933d4-d2ca-47df-9250-b3dbbab1d80a"), "Medium"),
-                    new CategoryDTO(new Guid("da1b99b4-a559-4c74-8844-ada3bdee7e48"), "Hard")
-                };
-            existingCategories.Add(newCategory);
-            return Ok(existingCategories);
+            return Ok(_categoryService.AddCategory(newCategory));
         }
 
         [HttpPut]
         public async Task<ActionResult> UpdateCategoryAsync(Guid guid, CategoryDTO updatedCategory)
         {
-            List<CategoryDTO> existingCategories =
-                new()
-                {
-                    new CategoryDTO(new Guid("4e25d511-2d2f-4a03-bda6-210b5facf14b"), "Easy"),
-                    new CategoryDTO(new Guid("83a933d4-d2ca-47df-9250-b3dbbab1d80a"), "Medium"),
-                    new CategoryDTO(new Guid("da1b99b4-a559-4c74-8844-ada3bdee7e48"), "Hard")
-                };
-            CategoryDTO categoryToUpdate = existingCategories.Find(x => x.Id == guid);
-            categoryToUpdate.Id = updatedCategory.Id;
-            categoryToUpdate.Name = updatedCategory.Name;
-            return Ok(categoryToUpdate);
+            return Ok(_categoryService.UpdateCategory(guid, updatedCategory));
         }
 
         [HttpDelete]
         public async Task<ActionResult> DeleteCategoryAsync(Guid guid)
         {
-            List<CategoryDTO> existingCategories =
-                new()
-                {
-                    new CategoryDTO(new Guid("4e25d511-2d2f-4a03-bda6-210b5facf14b"), "Easy"),
-                    new CategoryDTO(new Guid("83a933d4-d2ca-47df-9250-b3dbbab1d80a"), "Medium"),
-                    new CategoryDTO(new Guid("da1b99b4-a559-4c74-8844-ada3bdee7e48"), "Hard")
-                };
-            CategoryDTO categoryToDelete = existingCategories.Find(x => x.Id == guid);
-            existingCategories.Remove(categoryToDelete);
-            return Ok(existingCategories);
+            return Ok(_categoryService.DeleteCategory(guid));
         }
     }
 }
