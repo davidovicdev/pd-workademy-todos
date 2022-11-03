@@ -94,7 +94,7 @@ namespace PD.Workademy.Todo.Infrastructure.Persistance.Migrations
                     b.HasOne("PD.Workademy.Todo.Domain.Entities.Category", "Category")
                         .WithMany("TodoItems")
                         .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("PD.Workademy.Todo.Domain.Entities.User", "User")

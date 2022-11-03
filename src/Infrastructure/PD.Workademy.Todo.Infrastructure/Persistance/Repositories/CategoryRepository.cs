@@ -5,43 +5,52 @@ namespace PD.Workademy.Todo.Infrastructure.Persistance.Repositories
 {
     public class CategoryRepository : ICategoryRepository
     {
-        public static List<Category> categories =
-            new()
-            {
-                new Category(new Guid("4e25d511-2d2f-4a03-bda6-210b5facf14b"), "Easy"),
-                new Category(new Guid("83a933d4-d2ca-47df-9250-b3dbbab1d80a"), "Medium"),
-                new Category(new Guid("da1b99b4-a559-4c74-8844-ada3bdee7e48"), "Hard"),
-            };
+        private readonly ApplicationDbContext _dbContext;
+
+        public CategoryRepository(ApplicationDbContext dbContext)
+        {
+            _dbContext = dbContext;
+        }
 
         public Category AddCategory(Category category)
         {
-            categories.Add(category);
+            _dbContext.Categories.Add(category);
+            _dbContext.SaveChanges();
             return category;
         }
 
         public Category DeleteCategory(Guid guid)
         {
-            Category categoryToDelete = categories.Find(x => x.Id == guid);
-            categories.Remove(categoryToDelete);
-            return categoryToDelete;
+            try
+            {
+                Category categoryToDelete = _dbContext.Categories.FirstOrDefault(x => x.Id == guid);
+                _dbContext.Categories.Remove(categoryToDelete);
+                _dbContext.SaveChanges();
+                return categoryToDelete;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
         }
 
         public IEnumerable<Category> GetCategories()
         {
-            return categories;
+            return _dbContext.Categories;
         }
 
         public Category GetCategory(Guid guid)
         {
-            Category category = categories.Find(x => x.Id == guid);
+            Category? category = _dbContext.Categories.FirstOrDefault(x => x.Id == guid);
             return category;
         }
 
         public Category UpdateCategory(Guid guid, Category updatedCategory)
         {
-            var category = categories.Find(x => x.Id == guid);
+            var category = _dbContext.Categories.FirstOrDefault(x => x.Id == guid);
             category.Id = updatedCategory.Id;
             category.Name = updatedCategory.Name;
+            _dbContext.SaveChanges();
             return updatedCategory;
         }
     }

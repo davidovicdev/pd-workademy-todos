@@ -1,5 +1,7 @@
+using Microsoft.EntityFrameworkCore;
 using PD.Workademy.Todo.Application.Services;
 using PD.Workademy.Todo.Domain.SharedKernel.Interfaces.Repositories;
+using PD.Workademy.Todo.Infrastructure.Persistance;
 using PD.Workademy.Todo.Infrastructure.Persistance.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +14,11 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddTransient<ICategoryService, CategoryService>();
 builder.Services.AddTransient<ICategoryRepository, CategoryRepository>();
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Todos"));
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
