@@ -16,9 +16,9 @@ namespace PD.Workademy.Todo.Application.Services
     {
         private readonly ICategoryRepository _categoryRepository;
 
-        public CategoryService(ICategoryRepository cat)
+        public CategoryService(ICategoryRepository categoryRepository)
         {
-            _categoryRepository = cat;
+            _categoryRepository = categoryRepository;
         }
 
         public CategoryDTO AddCategory(CategoryDTO category)
@@ -30,26 +30,32 @@ namespace PD.Workademy.Todo.Application.Services
         public CategoryDTO DeleteCategory(Guid guid)
         {
             Category categoryToDelete = _categoryRepository.DeleteCategory(guid);
-            return new CategoryDTO(categoryToDelete.Id, categoryToDelete.Name);
+            CategoryDTO categoryDTO = new(categoryToDelete.Id, categoryToDelete.Name);
+            return categoryDTO;
         }
 
         public IEnumerable<CategoryDTO> GetCategories()
         {
             var categories = _categoryRepository.GetCategories();
-            return categories.Select(x => new CategoryDTO(x.Id, x.Name));
+            IEnumerable<CategoryDTO> categoriesDTO = categories.Select(
+                x => new CategoryDTO(x.Id, x.Name)
+            );
+            return categoriesDTO;
         }
 
         public CategoryDTO GetCategory(Guid guid)
         {
             Category category = _categoryRepository.GetCategory(guid);
-            return new CategoryDTO(category.Id, category.Name);
+            CategoryDTO categoryDTO = new(category.Id, category.Name);
+            return categoryDTO;
         }
 
         public CategoryDTO UpdateCategory(Guid guid, CategoryDTO updatedCategory)
         {
             Category categoryToUpdate = new(updatedCategory.Id, updatedCategory.Name);
             _categoryRepository.UpdateCategory(guid, categoryToUpdate);
-            return new CategoryDTO(categoryToUpdate.Id, categoryToUpdate.Name);
+            CategoryDTO categoryDTO = new(categoryToUpdate.Id, categoryToUpdate.Name);
+            return categoryDTO;
         }
     }
 }

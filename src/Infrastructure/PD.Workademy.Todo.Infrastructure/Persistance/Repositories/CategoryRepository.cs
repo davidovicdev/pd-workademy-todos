@@ -33,7 +33,8 @@ namespace PD.Workademy.Todo.Infrastructure.Persistance.Repositories
 
         public Category GetCategory(Guid guid)
         {
-            return categories.Find(x => x.Id == guid);
+            Category category = categories.Find(x => x.Id == guid);
+            return category;
         }
 
         public Category UpdateCategory(Guid guid, Category updatedCategory)
