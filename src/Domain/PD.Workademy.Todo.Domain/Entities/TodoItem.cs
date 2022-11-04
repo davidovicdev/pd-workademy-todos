@@ -9,5 +9,24 @@ namespace PD.Workademy.Todo.Domain.Entities
         public bool IsDone { get; private set; }
         public Category Category { get; set; }
         public User User { get; set; }
+
+        public TodoItem() { }
+
+        public TodoItem(
+            Guid guid,
+            string title,
+            bool isDone,
+            Category catgory,
+            User user,
+            string description = ""
+        )
+        {
+            Id = guid;
+            Title = title;
+            IsDone = isDone;
+            Category = catgory;
+            User = user;
+            Description = description;
+        }
     }
 }
