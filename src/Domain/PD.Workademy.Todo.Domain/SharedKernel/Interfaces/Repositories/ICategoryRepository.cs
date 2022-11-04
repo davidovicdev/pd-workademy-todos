@@ -6,7 +6,7 @@ namespace PD.Workademy.Todo.Domain.SharedKernel.Interfaces.Repositories
     {
         IEnumerable<Category> GetCategories();
         Category GetCategory(Guid guid);
-        Category UpdateCategory(Guid guid, Category category);
+        Category UpdateCategory(Category category);
         Category DeleteCategory(Guid guid);
         Category AddCategory(Category category);
     }

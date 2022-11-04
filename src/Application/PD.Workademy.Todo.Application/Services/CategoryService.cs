@@ -1,4 +1,6 @@
-﻿using PD.Workademy.Todo.Domain.Entities;
+﻿using PD.Workademy.Todo.Application.ApiModels;
+using PD.Workademy.Todo.Application.Interfaces;
+using PD.Workademy.Todo.Domain.Entities;
 using PD.Workademy.Todo.Domain.SharedKernel.Interfaces.Repositories;
 using PD.Workademy.Todo.Web.ApiModels;
 
@@ -13,10 +15,12 @@ namespace PD.Workademy.Todo.Application.Services
             _categoryRepository = categoryRepository;
         }
 
-        public CategoryDTO AddCategory(CategoryDTO category)
+        public CategoryDTO AddCategory(AddUpdateCategoryDTO category)
         {
-            _categoryRepository.AddCategory(new Category(category.Id, category.Name));
-            return category;
+            Guid guid = Guid.NewGuid();
+            _categoryRepository.AddCategory(new Category(guid, category.Name));
+            CategoryDTO categoryDTO = new(guid, category.Name);
+            return categoryDTO;
         }
 
         public CategoryDTO DeleteCategory(Guid guid)
@@ -42,11 +46,11 @@ namespace PD.Workademy.Todo.Application.Services
             return categoryDTO;
         }
 
-        public CategoryDTO UpdateCategory(Guid guid, CategoryDTO updatedCategory)
+        public CategoryDTO UpdateCategory(CategoryDTO updatedCategory)
         {
             Category categoryToUpdate = new(updatedCategory.Id, updatedCategory.Name);
-            _categoryRepository.UpdateCategory(guid, categoryToUpdate);
-            CategoryDTO categoryDTO = new(categoryToUpdate.Id, categoryToUpdate.Name);
+            _categoryRepository.UpdateCategory(categoryToUpdate);
+            CategoryDTO categoryDTO = new(updatedCategory.Id, updatedCategory.Name);
             return categoryDTO;
         }
     }

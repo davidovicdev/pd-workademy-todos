@@ -6,6 +6,8 @@
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
+        public UserDTO() { }
+
         public UserDTO(Guid id, string fname, string lname)
         {
             Id = id;
