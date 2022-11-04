@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PD.Workademy.Todo.Application.ApiModels;
 using PD.Workademy.Todo.Application.Interfaces;
 using PD.Workademy.Todo.Web.ApiModels;
 
@@ -26,13 +27,18 @@ namespace PD.Workademy.Todo.Web.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> AddCategoryAsync([FromBody] CategoryDTO newCategory)
+        public async Task<ActionResult> AddCategoryAsync(
+            [FromBody] AddUpdateCategoryDTO newCategory
+        )
         {
             return Ok(_categoryService.AddCategory(newCategory));
         }
 
-        [HttpPut]
-        public async Task<ActionResult> UpdateCategoryAsync(Guid guid, CategoryDTO updatedCategory)
+        [HttpPut("/Category/{guid}")]
+        public async Task<ActionResult> UpdateCategoryAsync(
+            Guid guid,
+            AddUpdateCategoryDTO updatedCategory
+        )
         {
             return Ok(_categoryService.UpdateCategory(guid, updatedCategory));
         }

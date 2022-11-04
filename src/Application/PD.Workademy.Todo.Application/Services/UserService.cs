@@ -1,4 +1,5 @@
-﻿using PD.Workademy.Todo.Application.Interfaces;
+﻿using PD.Workademy.Todo.Application.ApiModels;
+using PD.Workademy.Todo.Application.Interfaces;
 using PD.Workademy.Todo.Domain.Entities;
 using PD.Workademy.Todo.Domain.SharedKernel.Interfaces.Repositories;
 using PD.Workademy.Todo.Web.ApiModels;
@@ -14,10 +15,12 @@ namespace PD.Workademy.Todo.Application.Services
             _userRepository = userRepository;
         }
 
-        public UserDTO AddUser(UserDTO user)
+        public UserDTO AddUser(AddUpdateUserDTO user)
         {
-            _userRepository.AddUser(new User(user.Id, user.FirstName, user.LastName));
-            return user;
+            Guid guid = Guid.NewGuid();
+            _userRepository.AddUser(new User(guid, user.FirstName, user.LastName));
+            UserDTO userDTO = new(guid, user.FirstName, user.LastName);
+            return userDTO;
         }
 
         public UserDTO DeleteUser(Guid guid)
@@ -43,9 +46,9 @@ namespace PD.Workademy.Todo.Application.Services
             return userDTO;
         }
 
-        public UserDTO UpdateUser(Guid guid, UserDTO updatedUser)
+        public UserDTO UpdateUser(Guid guid, AddUpdateUserDTO updatedUser)
         {
-            User userToUpdate = new(updatedUser.Id, updatedUser.FirstName, updatedUser.LastName);
+            User userToUpdate = new(guid, updatedUser.FirstName, updatedUser.LastName);
             _userRepository.UpdateUser(guid, userToUpdate);
             UserDTO userDTO = new(userToUpdate.Id, userToUpdate.FirstName, updatedUser.LastName);
             return userDTO;

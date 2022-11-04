@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PD.Workademy.Todo.Application.ApiModels;
 using PD.Workademy.Todo.Application.Interfaces;
 using PD.Workademy.Todo.Web.ApiModels;
 
@@ -26,13 +27,13 @@ namespace PD.Workademy.Todo.Web.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> AddUserAsync([FromBody] UserDTO newUser)
+        public async Task<ActionResult> AddUserAsync([FromBody] AddUpdateUserDTO newUser)
         {
             return Ok(_userService.AddUser(newUser));
         }
 
-        [HttpPut]
-        public async Task<ActionResult> UpdateUserAsync(Guid guid, UserDTO updatedUser)
+        [HttpPut("/User/{guid}")]
+        public async Task<ActionResult> UpdateUserAsync(Guid guid, AddUpdateUserDTO updatedUser)
         {
             return Ok(_userService.UpdateUser(guid, updatedUser));
         }

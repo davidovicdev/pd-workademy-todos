@@ -1,4 +1,5 @@
-﻿using PD.Workademy.Todo.Web.ApiModels;
+﻿using PD.Workademy.Todo.Application.ApiModels;
+using PD.Workademy.Todo.Web.ApiModels;
 
 namespace PD.Workademy.Todo.Application.Interfaces
 {
@@ -6,8 +7,8 @@ namespace PD.Workademy.Todo.Application.Interfaces
     {
         IEnumerable<CategoryDTO> GetCategories();
         CategoryDTO GetCategory(Guid guid);
-        CategoryDTO UpdateCategory(Guid guid, CategoryDTO category);
+        CategoryDTO UpdateCategory(Guid guid, AddUpdateCategoryDTO category);
         CategoryDTO DeleteCategory(Guid guid);
-        CategoryDTO AddCategory(CategoryDTO category);
+        CategoryDTO AddCategory(AddUpdateCategoryDTO category);
     }
 }

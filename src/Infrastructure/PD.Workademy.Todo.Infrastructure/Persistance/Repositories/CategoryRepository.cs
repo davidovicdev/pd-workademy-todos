@@ -45,9 +45,9 @@ namespace PD.Workademy.Todo.Infrastructure.Persistance.Repositories
             return category;
         }
 
-        public Category UpdateCategory(Guid guid, Category updatedCategory)
+        public Category UpdateCategory(Category updatedCategory)
         {
-            var category = _dbContext.Categories.FirstOrDefault(x => x.Id == guid);
+            var category = _dbContext.Categories.FirstOrDefault(x => x.Id == updatedCategory.Id);
             category.Id = updatedCategory.Id;
             category.Name = updatedCategory.Name;
             _dbContext.SaveChanges();
