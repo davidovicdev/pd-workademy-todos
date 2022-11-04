@@ -7,7 +7,7 @@ namespace PD.Workademy.Todo.Application.Interfaces
     {
         IEnumerable<UserDTO> GetUsers();
         UserDTO GetUser(Guid guid);
-        UserDTO UpdateUser(Guid guid, AddUpdateUserDTO category);
+        UserDTO UpdateUser(UserDTO category);
         UserDTO DeleteUser(Guid guid);
         UserDTO AddUser(AddUpdateUserDTO category);
     }

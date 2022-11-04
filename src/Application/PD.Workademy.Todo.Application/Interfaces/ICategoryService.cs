@@ -7,7 +7,7 @@ namespace PD.Workademy.Todo.Application.Interfaces
     {
         IEnumerable<CategoryDTO> GetCategories();
         CategoryDTO GetCategory(Guid guid);
-        CategoryDTO UpdateCategory(Guid guid, AddUpdateCategoryDTO category);
+        CategoryDTO UpdateCategory(CategoryDTO category);
         CategoryDTO DeleteCategory(Guid guid);
         CategoryDTO AddCategory(AddUpdateCategoryDTO category);
     }

@@ -46,12 +46,11 @@ namespace PD.Workademy.Todo.Application.Services
             return userDTO;
         }
 
-        public UserDTO UpdateUser(Guid guid, AddUpdateUserDTO updatedUser)
+        public UserDTO UpdateUser(UserDTO updatedUser)
         {
-            User userToUpdate = new(guid, updatedUser.FirstName, updatedUser.LastName);
-            _userRepository.UpdateUser(guid, userToUpdate);
-            UserDTO userDTO = new(userToUpdate.Id, userToUpdate.FirstName, updatedUser.LastName);
-            return userDTO;
+            User userToUpdate = new(updatedUser.Id, updatedUser.FirstName, updatedUser.LastName);
+            _userRepository.UpdateUser(updatedUser.Id, userToUpdate);
+            return updatedUser;
         }
     }
 }
