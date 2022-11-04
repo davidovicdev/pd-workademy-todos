@@ -6,7 +6,7 @@ namespace PD.Workademy.Todo.Domain.SharedKernel.Interfaces.Repositories
     {
         IEnumerable<User> GetUsers();
         User GetUser(Guid guid);
-        User UpdateUser(Guid guid, User user);
+        User UpdateUser(User user);
         User DeleteUser(Guid guid);
         User AddUser(User user);
     }

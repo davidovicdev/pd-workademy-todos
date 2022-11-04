@@ -32,7 +32,7 @@ namespace PD.Workademy.Todo.Web.Controllers
             return Ok(_userService.AddUser(newUser));
         }
 
-        [HttpPut()]
+        [HttpPut]
         public async Task<ActionResult> UpdateUserAsync(UserDTO updatedUser)
         {
             return Ok(_userService.UpdateUser(updatedUser));

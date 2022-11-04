@@ -49,7 +49,7 @@ namespace PD.Workademy.Todo.Application.Services
         public UserDTO UpdateUser(UserDTO updatedUser)
         {
             User userToUpdate = new(updatedUser.Id, updatedUser.FirstName, updatedUser.LastName);
-            _userRepository.UpdateUser(updatedUser.Id, userToUpdate);
+            _userRepository.UpdateUser(userToUpdate);
             return updatedUser;
         }
     }

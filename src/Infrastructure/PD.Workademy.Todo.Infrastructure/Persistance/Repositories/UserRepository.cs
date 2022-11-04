@@ -1,4 +1,5 @@
-﻿using PD.Workademy.Todo.Domain.Entities;
+﻿using Microsoft.EntityFrameworkCore.Diagnostics;
+using PD.Workademy.Todo.Domain.Entities;
 using PD.Workademy.Todo.Domain.SharedKernel.Interfaces.Repositories;
 
 namespace PD.Workademy.Todo.Infrastructure.Persistance.Repositories
@@ -45,9 +46,9 @@ namespace PD.Workademy.Todo.Infrastructure.Persistance.Repositories
             return user;
         }
 
-        public User UpdateUser(Guid guid, User updatedUser)
+        public User UpdateUser(User updatedUser)
         {
-            var user = _dbContext.Users.FirstOrDefault(x => x.Id == guid);
+            var user = _dbContext.Users.FirstOrDefault(x => x.Id == updatedUser.Id);
             user.Id = updatedUser.Id;
             user.FirstName = updatedUser.FirstName;
             user.LastName = updatedUser.LastName;
