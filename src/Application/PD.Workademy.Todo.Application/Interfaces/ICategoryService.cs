@@ -1,8 +1,6 @@
-﻿using PD.Workademy.Todo.Domain.Entities;
-using PD.Workademy.Todo.Domain.SharedKernel.Interfaces.Repositories;
-using PD.Workademy.Todo.Web.ApiModels;
+﻿using PD.Workademy.Todo.Web.ApiModels;
 
-namespace PD.Workademy.Todo.Application.Services
+namespace PD.Workademy.Todo.Application.Interfaces
 {
     public interface ICategoryService
     {
