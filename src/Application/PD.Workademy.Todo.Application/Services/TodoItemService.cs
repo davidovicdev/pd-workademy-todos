@@ -23,6 +23,35 @@ namespace PD.Workademy.Todo.Application.Services
             _categoryRepository = categoryRepository;
         }
 
+        public TodoItemDTO UpdateTodoItem(UpdateTodoItemDTO updatedTodoItem)
+        {
+            Guid guid = updatedTodoItem.Id;
+            User user = _userRepository.GetUser(updatedTodoItem.UserGuid);
+            Category category = _categoryRepository.GetCategory(updatedTodoItem.CategoryGuid);
+            _todoItemRepository.UpdateTodoItem(
+                new TodoItem(
+                    guid,
+                    updatedTodoItem.Title,
+                    false,
+                    category,
+                    user,
+                    updatedTodoItem.Description
+                )
+            );
+            CategoryDTO categoryDTO = new(category.Id, category.Name);
+            UserDTO userDTO = new(user.Id, user.FirstName, user.LastName);
+            TodoItemDTO todoItemDTO =
+                new(
+                    guid,
+                    updatedTodoItem.Title,
+                    updatedTodoItem.Description,
+                    false,
+                    categoryDTO,
+                    userDTO
+                );
+            return todoItemDTO;
+        }
+
         public TodoItemDTO AddTodoItem(AddTodoItemDTO newTodoItem)
         {
             Guid guid = Guid.NewGuid();

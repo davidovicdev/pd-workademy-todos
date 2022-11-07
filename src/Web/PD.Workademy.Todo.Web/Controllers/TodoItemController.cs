@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PD.Workademy.Todo.Application.ApiModels;
 using PD.Workademy.Todo.Application.Interfaces;
-using PD.Workademy.Todo.Web.ApiModels;
 
 namespace PD.Workademy.Todo.Web.Controllers
 {

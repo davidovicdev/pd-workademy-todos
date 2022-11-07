@@ -44,5 +44,19 @@ namespace PD.Workademy.Todo.Infrastructure.Persistance.Repositories
         {
             return _dbContext.Todoitems.Include(x => x.Category).Include(x => x.User);
         }
+
+        public TodoItem UpdateTodoItem(TodoItem todoItem)
+        {
+            TodoItem updatedTodoItem = _dbContext.Todoitems.FirstOrDefault(
+                x => x.Id == todoItem.Id
+            );
+            updatedTodoItem.Title = todoItem.Title;
+            updatedTodoItem.Description = todoItem.Description;
+            updatedTodoItem.ChangeStatus(todoItem.IsDone);
+            updatedTodoItem.User = todoItem.User;
+            updatedTodoItem.Title = todoItem.Title;
+            _dbContext.SaveChanges();
+            return updatedTodoItem;
+        }
     }
 }

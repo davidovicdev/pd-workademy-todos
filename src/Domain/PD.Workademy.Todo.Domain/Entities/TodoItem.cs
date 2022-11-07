@@ -28,5 +28,10 @@ namespace PD.Workademy.Todo.Domain.Entities
             User = user;
             Description = description;
         }
+
+        public void ChangeStatus(bool isDone)
+        {
+            IsDone = isDone;
+        }
     }
 }
