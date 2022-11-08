@@ -21,17 +21,10 @@ namespace PD.Workademy.Todo.Infrastructure.Persistance.Repositories
 
         public Category DeleteCategory(Guid guid)
         {
-            try
-            {
-                Category categoryToDelete = _dbContext.Categories.FirstOrDefault(x => x.Id == guid);
-                _dbContext.Categories.Remove(categoryToDelete);
-                _dbContext.SaveChanges();
-                return categoryToDelete;
-            }
-            catch (Exception e)
-            {
-                throw new Exception(e.Message);
-            }
+            Category categoryToDelete = _dbContext.Categories.FirstOrDefault(x => x.Id == guid);
+            _dbContext.Categories.Remove(categoryToDelete);
+            _dbContext.SaveChanges();
+            return categoryToDelete;
         }
 
         public IEnumerable<Category> GetCategories()
