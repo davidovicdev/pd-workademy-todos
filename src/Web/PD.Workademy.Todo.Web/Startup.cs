@@ -1,9 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using PD.Workademy.Todo.Domain.SharedKernel.Interfaces.Repositories;
-using PD.Workademy.Todo.Infrastructure.Persistance;
-using PD.Workademy.Todo.Infrastructure.Persistance.Repositories;
-
-namespace PD.Workademy.Todo.Web
+﻿namespace PD.Workademy.Todo.Web
 {
     public class Startup
     {
@@ -19,14 +14,6 @@ namespace PD.Workademy.Todo.Web
             services.AddControllers();
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
-            services.AddTransient<ICategoryRepository, CategoryRepository>();
-            services.AddTransient<UserRepository>();
-            services.AddTransient<IUserRepository, UserRepository>();
-            services.AddTransient<ITodoItemRepository, TodoItemRepository>();
-            services.AddDbContext<ApplicationDbContext>(options =>
-            {
-                options.UseSqlServer(Configuration.GetConnectionString("Todos"));
-            });
         }
 
         public void Configure(IApplicationBuilder app)
