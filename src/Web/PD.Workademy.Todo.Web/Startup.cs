@@ -16,14 +16,9 @@ namespace PD.Workademy.Todo.Web
 
         public void ConfigureServices(IServiceCollection services)
         {
-            // Add services to the container.\
             services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
-            /*services.AddTransient<ICategoryService, CategoryService>();
-            services.AddTransient<IUserService, UserService>();
-            services.AddTransient<ITodoItemService, TodoItemService>();*/
             services.AddTransient<ICategoryRepository, CategoryRepository>();
             services.AddTransient<UserRepository>();
             services.AddTransient<IUserRepository, UserRepository>();

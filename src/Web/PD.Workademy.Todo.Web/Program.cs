@@ -8,8 +8,6 @@ var applicationStartup = new ApplicationStartup(builder.Configuration);
 applicationStartup.ConfigureServices(builder.Services);
 var app = builder.Build();
 startup.Configure(app);
-
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
