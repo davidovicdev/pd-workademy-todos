@@ -8,10 +8,15 @@ namespace PD.Workademy.Todo.Web.Controllers
     public class CategoryController : ApiBaseController
     {
         private readonly ICategoryService _categoryService;
+        private readonly ILogger<CategoryController> _logger;
 
-        public CategoryController(ICategoryService categoryService)
+        public CategoryController(
+            ICategoryService categoryService,
+            ILogger<CategoryController> logger
+        )
         {
             _categoryService = categoryService;
+            _logger = logger;
         }
 
         [HttpGet]
@@ -23,6 +28,7 @@ namespace PD.Workademy.Todo.Web.Controllers
         [HttpGet("/Categories")]
         public async Task<ActionResult> GetCategoriesAsync()
         {
+            _logger.LogInformation("Evo ti sve kategorije");
             return Ok(_categoryService.GetCategories());
         }
 
