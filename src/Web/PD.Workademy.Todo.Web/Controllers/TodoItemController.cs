@@ -42,5 +42,11 @@ namespace PD.Workademy.Todo.Web.Controllers
         {
             return Ok(_todoItemService.DeleteTodoItem(guid));
         }
+
+        [HttpGet("/TodoItems/SPS")]
+        public async Task<ActionResult> GetTodoItemsSPSAsync([FromQuery] TodoItemSPSDTO sps)
+        {
+            return Ok(_todoItemService.GetTodoItemsSPS(sps));
+        }
     }
 }

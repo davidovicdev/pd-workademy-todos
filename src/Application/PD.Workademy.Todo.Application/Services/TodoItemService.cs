@@ -125,5 +125,28 @@ namespace PD.Workademy.Todo.Application.Services
                 );
             return todoItemDTO;
         }
+
+        public IEnumerable<TodoItemDTO> GetTodoItemsSPS(TodoItemSPSDTO sps)
+        {
+            int page = sps.PageNumber;
+            string sortBy = sps.SortBy;
+            TodoItemDTO todoDTO = new():
+                if (sortBy.)
+                string search = sps.Search;
+            var todoItems = _todoItemRepository.GetTodoItemsSPS(page, sortBy, search);
+            IEnumerable<TodoItemDTO> todoItemsDTO = todoItems.Select(
+                x =>
+                    new TodoItemDTO(
+                        x.Id,
+                        x.Title,
+                        x.Description,
+                        x.IsDone,
+                        new CategoryDTO(x.Category.Id, x.Category.Name),
+                        new UserDTO(x.User.Id, x.User.FirstName, x.User.LastName)
+                    )
+            );
+            ;
+            return todoItemsDTO;
+        }
     }
 }

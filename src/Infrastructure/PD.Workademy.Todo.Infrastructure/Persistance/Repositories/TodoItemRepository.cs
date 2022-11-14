@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PD.Workademy.Todo.Domain.Entities;
 using PD.Workademy.Todo.Domain.SharedKernel.Interfaces.Repositories;
-
+#nullable disable
 namespace PD.Workademy.Todo.Infrastructure.Persistance.Repositories
 {
     public class TodoItemRepository : ITodoItemRepository
@@ -45,6 +45,27 @@ namespace PD.Workademy.Todo.Infrastructure.Persistance.Repositories
             return _dbContext.Todoitems.Include(x => x.Category).Include(x => x.User);
         }
 
+        public IEnumerable<TodoItem> GetTodoItemsSPS(int page, string sortBy, string search)
+        {
+            var perPage = 2;
+            var todoItems = _dbContext.Todoitems
+                .Include(x => x.Category)
+                .Include(x => x.User)
+                .OrderBy(x => x)
+                .Where(
+                    x =>
+                        x.Title.Contains(search)
+                        || x.Description.Contains(search)
+                        || x.Category.Name.Contains(search)
+                        || x.User.FirstName.Contains(search)
+                        || x.User.LastName.Contains(search)
+                )
+                .Skip((page - 1) * perPage)
+                .Take(perPage)
+                .ToList();
+            return todoItems;
+        }
+
         public TodoItem UpdateTodoItem(TodoItem todoItem)
         {
             TodoItem updatedTodoItem = _dbContext.Todoitems.FirstOrDefault(
@@ -53,6 +74,7 @@ namespace PD.Workademy.Todo.Infrastructure.Persistance.Repositories
             updatedTodoItem.Title = todoItem.Title;
             updatedTodoItem.Description = todoItem.Description;
             updatedTodoItem.ChangeStatus(todoItem.IsDone);
+            updatedTodoItem.Category = todoItem.Category;
             updatedTodoItem.User = todoItem.User;
             updatedTodoItem.Title = todoItem.Title;
             _dbContext.SaveChanges();
