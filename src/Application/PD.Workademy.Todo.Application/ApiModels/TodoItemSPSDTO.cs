@@ -4,16 +4,17 @@
     {
         public TodoItemSPSDTO() { }
 
-        public TodoItemSPSDTO(string search, int pageNumber, string sortBy)
+        public TodoItemSPSDTO(string search, string sortBy, int page, int perPage)
         {
             Search = search;
-            PageNumber = pageNumber;
             SortBy = sortBy;
+            Page = page;
+            PerPage = perPage;
         }
 
-        public int PageNumber { get; set; } = 1;
-
-        public string? Search { get; set; } = "";
+        public int PerPage { get; set; }
+        public int Page { get; set; }
+        public string? Search { get; set; }
         public string? SortBy { get; set; }
     }
 }

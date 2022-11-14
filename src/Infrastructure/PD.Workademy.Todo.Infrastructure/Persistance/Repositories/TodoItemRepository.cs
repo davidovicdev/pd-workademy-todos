@@ -45,13 +45,17 @@ namespace PD.Workademy.Todo.Infrastructure.Persistance.Repositories
             return _dbContext.Todoitems.Include(x => x.Category).Include(x => x.User);
         }
 
-        public IEnumerable<TodoItem> GetTodoItemsSPS(int page, string sortBy, string search)
+        public IEnumerable<TodoItem> GetTodoItemsSPS(
+            string search,
+            string sortBy,
+            int page,
+            int perPage
+        )
         {
-            var perPage = 2;
             var todoItems = _dbContext.Todoitems
                 .Include(x => x.Category)
                 .Include(x => x.User)
-                .OrderBy(x => x)
+                .OrderBy(x => x[sortBy])
                 .Where(
                     x =>
                         x.Title.Contains(search)

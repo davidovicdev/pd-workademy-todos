@@ -128,10 +128,11 @@ namespace PD.Workademy.Todo.Application.Services
 
         public IEnumerable<TodoItemDTO> GetTodoItemsSPS(TodoItemSPSDTO sps)
         {
-            int page = sps.PageNumber;
-            string sortBy = sps.SortBy;
-            string search = sps.Search;
-            var todoItems = _todoItemRepository.GetTodoItemsSPS(page, sortBy, search);
+            string search = sps.Search ?? "";
+            string sortBy = sps.SortBy ?? "Id";
+            int page = sps.Page == null || sps.Page == 0 ? 1 : sps.Page;
+            int perPage = sps.PerPage == null || sps.PerPage == 0 ? 10 : sps.PerPage;
+            var todoItems = _todoItemRepository.GetTodoItemsSPS(search, sortBy, page, perPage);
             IEnumerable<TodoItemDTO> todoItemsDTO = todoItems.Select(
                 x =>
                     new TodoItemDTO(
