@@ -130,9 +130,7 @@ namespace PD.Workademy.Todo.Application.Services
         {
             int page = sps.PageNumber;
             string sortBy = sps.SortBy;
-            TodoItemDTO todoDTO = new():
-                if (sortBy.)
-                string search = sps.Search;
+            string search = sps.Search;
             var todoItems = _todoItemRepository.GetTodoItemsSPS(page, sortBy, search);
             IEnumerable<TodoItemDTO> todoItemsDTO = todoItems.Select(
                 x =>
