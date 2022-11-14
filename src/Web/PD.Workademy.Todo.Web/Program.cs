@@ -11,6 +11,7 @@ builder.Host.UseSerilog(
         config.ReadFrom.Configuration(context.Configuration);
     }
 );
+
 var startup = new Startup(builder.Configuration);
 startup.ConfigureServices(builder.Services);
 ApplicationStartup applicationStartup = new(builder.Configuration);

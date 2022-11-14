@@ -4,7 +4,6 @@ namespace PD.Workademy.Todo.Domain.SharedKernel.Interfaces.Repositories
 {
     public interface ITodoItemRepository
     {
-        IEnumerable<TodoItem> GetTodoItems();
         IEnumerable<TodoItem> GetTodoItemsSPS(string search, string sortBt, int page, int perPage);
         TodoItem UpdateTodoItem(TodoItem todoItem);
         TodoItem GetTodoItem(Guid guid);

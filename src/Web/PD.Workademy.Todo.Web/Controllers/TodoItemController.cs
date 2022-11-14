@@ -19,12 +19,6 @@ namespace PD.Workademy.Todo.Web.Controllers
             return Ok(_todoItemService.GetTodoItem(guid));
         }
 
-        [HttpGet("/TodoItems")]
-        public async Task<ActionResult> GetTodoItemsAsync()
-        {
-            return Ok(_todoItemService.GetTodoItems());
-        }
-
         [HttpPost]
         public async Task<ActionResult> AddTodoItemAsync([FromBody] AddTodoItemDTO newTodoItem)
         {
@@ -43,7 +37,7 @@ namespace PD.Workademy.Todo.Web.Controllers
             return Ok(_todoItemService.DeleteTodoItem(guid));
         }
 
-        [HttpGet("/TodoItems/SPS")]
+        [HttpGet("/TodoItems")]
         public async Task<ActionResult> GetTodoItemsSPSAsync([FromQuery] TodoItemSPSDTO sps)
         {
             return Ok(_todoItemService.GetTodoItemsSPS(sps));

@@ -40,11 +40,6 @@ namespace PD.Workademy.Todo.Infrastructure.Persistance.Repositories
             return todoItem;
         }
 
-        public IEnumerable<TodoItem> GetTodoItems()
-        {
-            return _dbContext.Todoitems.Include(x => x.Category).Include(x => x.User);
-        }
-
         public IEnumerable<TodoItem> GetTodoItemsSPS(
             string search,
             string sortBy,

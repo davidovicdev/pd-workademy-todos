@@ -74,24 +74,6 @@ namespace PD.Workademy.Todo.Application.Services
             return todoItemDTO;
         }
 
-        public IEnumerable<TodoItemDTO> GetTodoItems()
-        {
-            var todoItems = _todoItemRepository.GetTodoItems();
-            IEnumerable<TodoItemDTO> todoItemsDTO = todoItems.Select(
-                x =>
-                    new TodoItemDTO(
-                        x.Id,
-                        x.Title,
-                        x.Description,
-                        x.IsDone,
-                        new CategoryDTO(x.Category.Id, x.Category.Name),
-                        new UserDTO(x.User.Id, x.User.FirstName, x.User.LastName)
-                    )
-            );
-            ;
-            return todoItemsDTO;
-        }
-
         public TodoItemDTO DeleteTodoItem(Guid guid)
         {
             TodoItem todoItemToDelete = _todoItemRepository.DeleteTodoItem(guid);
