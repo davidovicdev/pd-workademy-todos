@@ -74,24 +74,6 @@ namespace PD.Workademy.Todo.Application.Services
             return todoItemDTO;
         }
 
-        public IEnumerable<TodoItemDTO> GetTodoItems()
-        {
-            var todoItems = _todoItemRepository.GetTodoItems();
-            IEnumerable<TodoItemDTO> todoItemsDTO = todoItems.Select(
-                x =>
-                    new TodoItemDTO(
-                        x.Id,
-                        x.Title,
-                        x.Description,
-                        x.IsDone,
-                        new CategoryDTO(x.Category.Id, x.Category.Name),
-                        new UserDTO(x.User.Id, x.User.FirstName, x.User.LastName)
-                    )
-            );
-            ;
-            return todoItemsDTO;
-        }
-
         public TodoItemDTO DeleteTodoItem(Guid guid)
         {
             TodoItem todoItemToDelete = _todoItemRepository.DeleteTodoItem(guid);
@@ -124,6 +106,28 @@ namespace PD.Workademy.Todo.Application.Services
                     new UserDTO(todoItem.User.Id, todoItem.User.FirstName, todoItem.User.LastName)
                 );
             return todoItemDTO;
+        }
+
+        public IEnumerable<TodoItemDTO> GetTodoItemsSPS(TodoItemSPSDTO sps)
+        {
+            string search = sps.Search ?? "";
+            string sortBy = sps.SortBy ?? "Id";
+            int page = sps.Page == null || sps.Page == 0 ? 1 : sps.Page;
+            int perPage = sps.PerPage == null || sps.PerPage == 0 ? 10 : sps.PerPage;
+            var todoItems = _todoItemRepository.GetTodoItemsSPS(search, sortBy, page, perPage);
+            IEnumerable<TodoItemDTO> todoItemsDTO = todoItems.Select(
+                x =>
+                    new TodoItemDTO(
+                        x.Id,
+                        x.Title,
+                        x.Description,
+                        x.IsDone,
+                        new CategoryDTO(x.Category.Id, x.Category.Name),
+                        new UserDTO(x.User.Id, x.User.FirstName, x.User.LastName)
+                    )
+            );
+            ;
+            return todoItemsDTO;
         }
     }
 }

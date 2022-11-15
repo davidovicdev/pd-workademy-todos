@@ -1,4 +1,5 @@
 ﻿using PD.Workademy.Todo.Domain.SharedKernel;
+using System.Reflection;
 
 namespace PD.Workademy.Todo.Domain.Entities
 {
@@ -32,6 +33,20 @@ namespace PD.Workademy.Todo.Domain.Entities
         public void ChangeStatus(bool isDone)
         {
             IsDone = isDone;
+        }
+
+        public object this[string propertyName]
+        {
+            get
+            {
+                PropertyInfo property = GetType().GetProperty(propertyName);
+                return property.GetValue(this, null);
+            }
+            set
+            {
+                PropertyInfo property = GetType().GetProperty(propertyName);
+                property.SetValue(this, value, null);
+            }
         }
     }
 }
