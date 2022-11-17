@@ -32,7 +32,7 @@ namespace PD.Workademy.Todo.Application.Services
                 new TodoItem(
                     guid,
                     updatedTodoItem.Title,
-                    false,
+                    updatedTodoItem.IsDone,
                     category,
                     user,
                     updatedTodoItem.Description
@@ -45,7 +45,7 @@ namespace PD.Workademy.Todo.Application.Services
                     guid,
                     updatedTodoItem.Title,
                     updatedTodoItem.Description,
-                    false,
+                    updatedTodoItem.IsDone,
                     categoryDTO,
                     userDTO
                 );

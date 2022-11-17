@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Diagnostics;
-using PD.Workademy.Todo.Domain.Entities;
+﻿using PD.Workademy.Todo.Domain.Entities;
 using PD.Workademy.Todo.Domain.SharedKernel.Interfaces.Repositories;
 
 namespace PD.Workademy.Todo.Infrastructure.Persistance.Repositories
@@ -25,6 +24,7 @@ namespace PD.Workademy.Todo.Infrastructure.Persistance.Repositories
             try
             {
                 User userToDelete = _dbContext.Users.FirstOrDefault(x => x.Id == guid);
+                _dbContext.Todoitems.RemoveRange(_dbContext.Todoitems.Where(x => x.User.Id == guid));
                 _dbContext.Users.Remove(userToDelete);
                 _dbContext.SaveChanges();
                 return userToDelete;

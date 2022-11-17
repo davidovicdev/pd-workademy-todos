@@ -22,6 +22,7 @@ namespace PD.Workademy.Todo.Infrastructure.Persistance.Repositories
         public Category DeleteCategory(Guid guid)
         {
             Category categoryToDelete = _dbContext.Categories.FirstOrDefault(x => x.Id == guid);
+            _dbContext.Todoitems.RemoveRange(_dbContext.Todoitems.Where(x => x.Category.Id == guid));
             _dbContext.Categories.Remove(categoryToDelete);
             _dbContext.SaveChanges();
             return categoryToDelete;
