@@ -1,17 +1,16 @@
 using PD.Workademy.Todo.Application;
 using PD.Workademy.Todo.Infrastructure;
-using Serilog;
 using Startup = PD.Workademy.Todo.Web.Startup;
 
 var builder = WebApplication.CreateBuilder(args);
-
+/*
 builder.Host.UseSerilog(
     (context, config) =>
     {
         config.ReadFrom.Configuration(context.Configuration);
     }
 );
-
+*/
 var startup = new Startup(builder.Configuration);
 startup.ConfigureServices(builder.Services);
 ApplicationStartup applicationStartup = new(builder.Configuration);
@@ -20,11 +19,8 @@ InfrastructureStartup infrastructureStartup = new(builder.Configuration);
 infrastructureStartup.ConfigureService(builder.Services);
 var app = builder.Build();
 startup.Configure(app);
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.Run();

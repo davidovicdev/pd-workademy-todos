@@ -1,14 +1,25 @@
-# Build Stage
-FROM mcr.microsoft.com/dotnet/sdk:6.0-focal AS build
-WORKDIR /source
-COPY . .
-RUN dotnet restore "./src/Web/PD.Workademy.Todo.Web/PD.Workademy.Todo.Web.csproj" --disable-parallel
-RUN dotnet publish "./src/Web/PD.Workademy.Todo.Web/PD.Workademy.Todo.Web.csproj" -c release -o /app --no-restore
+#See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
 
-# Serve Stage
-FROM mcr.micorosftcom/dotnet/aspnet:6.0-focal
+FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
 WORKDIR /app
-COPY --from = build /app /. 
+EXPOSE 80
+EXPOSE 443
 
-EXPOSE 5000
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+WORKDIR /src
+COPY ["src/Web/PD.Workademy.Todo.Web/PD.Workademy.Todo.Web.csproj", "src/Web/PD.Workademy.Todo.Web/"]
+COPY ["src/Application/PD.Workademy.Todo.Application/PD.Workademy.Todo.Application.csproj", "src/Application/PD.Workademy.Todo.Application/"]
+COPY ["src/Domain/PD.Workademy.Todo.Domain/PD.Workademy.Todo.Domain.csproj", "src/Domain/PD.Workademy.Todo.Domain/"]
+COPY ["src/Infrastructure/PD.Workademy.Todo.Infrastructure/PD.Workademy.Todo.Infrastructure.csproj", "src/Infrastructure/PD.Workademy.Todo.Infrastructure/"]
+RUN dotnet restore "src/Web/PD.Workademy.Todo.Web/PD.Workademy.Todo.Web.csproj"
+COPY . .
+WORKDIR "/src/src/Web/PD.Workademy.Todo.Web"
+RUN dotnet build "PD.Workademy.Todo.Web.csproj" -c Release -o /app/build
+
+FROM build AS publish
+RUN dotnet publish "PD.Workademy.Todo.Web.csproj" -c Release -o /app/publish /p:UseAppHost=false
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "PD.Workademy.Todo.Web.dll"]
