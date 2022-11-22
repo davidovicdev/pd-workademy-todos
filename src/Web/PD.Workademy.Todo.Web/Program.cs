@@ -3,14 +3,14 @@ using PD.Workademy.Todo.Infrastructure;
 using Startup = PD.Workademy.Todo.Web.Startup;
 
 var builder = WebApplication.CreateBuilder(args);
-/*
+
 builder.Host.UseSerilog(
     (context, config) =>
     {
         config.ReadFrom.Configuration(context.Configuration);
     }
 );
-*/
+
 var startup = new Startup(builder.Configuration);
 startup.ConfigureServices(builder.Services);
 ApplicationStartup applicationStartup = new(builder.Configuration);
