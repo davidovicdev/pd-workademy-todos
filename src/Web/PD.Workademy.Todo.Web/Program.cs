@@ -1,5 +1,6 @@
 using PD.Workademy.Todo.Application;
 using PD.Workademy.Todo.Infrastructure;
+using Serilog;
 using Startup = PD.Workademy.Todo.Web.Startup;
 
 var builder = WebApplication.CreateBuilder(args);

@@ -1,11 +1,9 @@
 version: "3.9"
 services:
-  web:
-    build: .
-    ports:
-      - "7331:80"
   todo:
     image: "todo:latest"
+    ports:
+      - "7331:80"
   mongo:
     image: "mongo:latest"
     ports:
