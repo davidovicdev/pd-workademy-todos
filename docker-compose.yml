@@ -8,3 +8,5 @@ services:
     image: "todo:latest"
   mongo:
     image: "mongo:latest"
+    ports:
+      - "8007:27017"
